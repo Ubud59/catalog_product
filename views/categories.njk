@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+{% extends "layout.njk" %}
+
+
+{% block content %}
+<ul class="list-group">
+  <li class="list-group-item list-group-item-primary">Categories</li>
+  {% for categorie in categories %}
+    <a href='http://localhost:3000/categories/{{categorie.id}}/products'><li class="list-group-item list-group-item-action">{{categorie.label}}</li></a>
+  {% endfor %}
+</ul>
+{% endblock %}

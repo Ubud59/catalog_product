@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<div class="card" style="width: 20rem;">
+  <img class="card-img-top" src='https://www.decathlon.fr/media/{{product.image_path}}' alt="Card image cap">
+  <div class="card-body">
+    <h4 class="card-title">{{product.title}}</h4>
+    <p class="card-text">{{product.description}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Réf : {{product.decathlon_id}}</li>
+    <li class="list-group-item">{{product.min_price}} €</li>
+    <li class="list-group-item">
+      <div class="stars-outer">
+          <div class="stars-inner" style="width: {{product.rating_percent}}%"></div>
+      </div>
+    </li>
+  </ul>
+  <div class="card-body">
+    <a href="http://localhost:3000/categories" class="card-link">Retour Liste des Catégories</a>
+  </div>
+</div>
+
+
+{% endblock %}
